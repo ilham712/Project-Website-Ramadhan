@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Zakat - Ramadhan Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo masjid.png" type="x-icon" />
+</head>
+<body>
+    <header>
+        <h1>Kalkulator Zakat</h1>
+        <nav class="nav">
+            <a href="index.html">Beranda</a>
+            <a href="Misi Pertama.html">Doa</a>
+            <a href="Misi Kedua.html">Zikir</a>
+            <a href="Misi Ketiga.html" style="color: #d4af37">Zakat</a>
+            <a href="Misi Keempat.html">To-Do List</a>
+            <a href="Misi Kelima.html">Jadwal Sholat</a>
+        </nav>
+    </header>
+
+    <!-- PAGE ZAKAT -->
+    <main class="halaman-utama">
+        <section class="utama zakat-section">
+            <h2>Hitung Zakat</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #555;">Hitung kewajiban zakat penghasilan atau emas secara otomatis.</p>
+            
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="jenis-zakat">Jenis Zakat</label>
+                    <select id="jenis-zakat">
+                        <option value="penghasilan">Zakat Penghasilan</option>
+                        <option value="emas">Zakat Emas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="harga-emas">Harga Emas per Gram (Rp)</label>
+                    <input type="number" id="harga-emas" placeholder="Contoh: 1000000">
+                </div>
+
+                <div id="form-penghasilan">
+                    <div class="form-group">
+                        <label for="gaji">Gaji Bulanan (Rp)</label>
+                        <input type="number" id="gaji" placeholder="Masukkan gaji bersih">
+                    </div>
+                    <div class="form-group">
+                        <label for="penghasilan-lain">Penghasilan Lain (Rp)</label>
+                        <input type="number" id="penghasilan-lain" placeholder="Bonus, dll (Opsional)">
+                    </div>
+                </div>
+
+                <div id="form-emas" style="display: none;">
+                    <div class="form-group">
+                        <label for="gram-emas">Total Emas (Gram)</label>
+                        <input type="number" id="gram-emas" placeholder="Masukkan jumlah gram">
+                    </div>
+                </div>
+
+                <button id="hitung-btn" class="btn-utama" style="width: 100%; margin-top: 20px; border: none; cursor: pointer;">Hitung Zakat</button>
+            </div>
+
+            <div id="hasil-zakat" class="result-box" style="display: none;">
+                <h3>Hasil Perhitungan</h3>
+                <div class="result-item">
+                    <span>Total Harta/Penghasilan:</span>
+                    <strong id="res-total">Rp 0</strong>
+                </div>
+                <div class="result-item">
+                    <span>Nisab (85gr Emas):</span>
+                    <strong id="res-nisab">Rp 0</strong>
+                </div>
+                <div class="result-item">
+                    <span>Status:</span>
+                    <strong id="res-status" style="color: #1B4332;">-</strong>
+                </div>
+                <div class="result-item highlight">
+                    <span>Zakat yang harus dibayar:</span>
+                    <strong id="res-zakat">Rp 0</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 by Ilham Cahyo Saputro | Front-End Mission</p>
+    </footer>
+
+    <script src="Misi Ketiga.js"></script>
+</body>
+</html>

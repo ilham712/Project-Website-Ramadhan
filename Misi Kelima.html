@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Imsakiyah - Ramadhan Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo masjid.png" type="x-icon" />
+</head>
+<body>
+    <header>
+        <h1>🌙 Jadwal Imsakiyah</h1>
+        <nav class="nav">
+            <a href="index.html">Beranda</a>
+            <a href="Misi Pertama.html">Doa</a>
+            <a href="Misi Kedua.html">Zikir</a>
+            <a href="Misi Ketiga.html">Zakat</a>
+            <a href="Misi Keempat.html">To-Do List</a>
+            <a href="Misi Kelima.html" style="color: #D4AF37;">Jadwal Sholat</a>
+        </nav>
+    </header>
+
+    <main class="halaman-utama">
+        <section class="utama imsakiyah-section">
+            <h2>Jadwal Sholat Ramadhan</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #555;">
+                Pilih kota Anda untuk melihat jadwal imsakiyah
+            </p>
+            
+            <!-- Dropdown Kota -->
+            <div class="form-group">
+                <label for="pilih-kota">Pilih Kota</label>
+                <select id="pilih-kota">
+                    <option value="">-- Pilih Kota --</option>
+                    <!-- Kota akan diisi oleh JavaScript -->
+                </select>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Memuat data jadwal...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="error-state" style="display: none;">
+                <p>⚠️ Gagal memuat data. Silakan coba lagi.</p>
+                <button id="retry-btn" class="btn-utama">Coba Lagi</button>
+            </div>
+
+            <!-- Info Lokasi -->
+            <div id="lokasi-info" class="lokasi-info" style="display: none;">
+                <h3 id="nama-lokasi">-</h3>
+                <p id="nama-daerah">-</p>
+            </div>
+
+            <!-- Tabel Jadwal -->
+            <div id="tabel-container" class="tabel-container" style="display: none;">
+                <table class="jadwal-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Imsak</th>
+                            <th>Subuh</th>
+                            <th>Dzuhur</th>
+                            <th>Ashar</th>
+                            <th>Maghrib</th>
+                            <th>Isya</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jadwal-body">
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 by Ilham Cahyo Saputro | Front-End Mission</p>
+    </footer>
+
+    <script src="Misi Kelima.js"></script>
+</body>
+</html>

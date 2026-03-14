@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List Ramadhan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logo masjid.png" type="x-icon" />
+  </head>
+  <body>
+    <header>
+      <h1>🌙 To-Do List Ramadhan</h1>
+      <nav class="nav">
+        <a href="index.html">Beranda</a>
+        <a href="Misi Pertama.html">Doa</a>
+        <a href="Misi Kedua.html">Zikir</a>
+        <a href="Misi Ketiga.html">Zakat</a>
+        <a href="Misi Keempat.html" style="color: #d4af37">To-Do List</a>
+        <a href="Misi Kelima.html">Jadwal Sholat</a>
+      </nav>
+    </header>
+
+    <main class="halaman-utama">
+      <section class="utama todo-section">
+        <h2>Tracker Ibadah Ramadhan</h2>
+
+        <!-- Progress Harian -->
+        <div class="progress-summary">
+          <h3>Progress Hari Ini</h3>
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar"
+              id="total-progress-bar"
+              style="width: 0%"
+            ></div>
+          </div>
+          <p id="total-progress-text">0%</p>
+          <p id="motivasi-status" class="motivasi">
+            Semangat! Mulai dari langkah kecil ✨
+          </p>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="shalat">
+            🕌 Shalat Wajib
+          </button>
+          <button class="tab-btn" data-tab="quran">📖 Baca Qur'an</button>
+          <button class="tab-btn" data-tab="puasa">🌙 Puasa</button>
+        </div>
+
+        <!-- Bagian Shalat -->
+        <div id="shalat" class="tab-content active">
+          <h3>Checklist Shalat 5 Waktu</h3>
+          <div class="checklist-container">
+            <label class="check-item">
+              <input type="checkbox" id="shubuh" class="shalat-check" />
+              <span>Subuh</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="dzuhur" class="shalat-check" />
+              <span>Dzuhur</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="ashar" class="shalat-check" />
+              <span>Ashar</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="maghrib" class="shalat-check" />
+              <span>Maghrib</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" id="isya" class="shalat-check" />
+              <span>Isya</span>
+            </label>
+          </div>
+          <div class="shalat-progress">
+            <p>Progress: <span id="shalat-progress-text">0/5</span></p>
+            <p id="shalat-status" class="status-text">-</p>
+          </div>
+          <button id="save-shalat" class="btn-simpan">💾 Simpan</button>
+        </div>
+
+        <!-- Bagian Al-Quran -->
+        <div id="quran" class="tab-content">
+          <h3>Target Baca Qur'an</h3>
+          <div class="form-group">
+            <label for="quran-target">Target Halaman (per hari)</label>
+            <input
+              type="number"
+              id="quran-target"
+              placeholder="Contoh: 10"
+              min="1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="quran-read">Halaman Sudah Dibaca</label>
+            <input
+              type="number"
+              id="quran-read"
+              placeholder="Contoh: 5"
+              min="0"
+            />
+          </div>
+          <div class="quran-progress">
+            <div class="progress-bar-container">
+              <div
+                class="progress-bar"
+                id="quran-progress-bar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p id="quran-progress-text">0%</p>
+            <p id="quran-status" class="status-text">-</p>
+          </div>
+          <button id="save-quran" class="btn-simpan">💾 Simpan</button>
+          <button id="reset-quran" class="btn-reset">🔄 Reset</button>
+        </div>
+
+        <!-- BagianPuasa -->
+        <div id="puasa" class="tab-content">
+          <h3>Kalender Puasa Ramadhan</h3>
+
+          <!-- Info Hari Ini -->
+          <div class="hari-ini-box">
+            <p>Hari Ini: <span id="nama-hari">-</span></p>
+            <p class="hari-ke">
+              Hari ke-<span id="hari-ramadhan">1</span> Ramadhan
+            </p>
+          </div>
+
+          <!-- Kalender Grid (Bisa diklik langsung) -->
+          <div class="kalender-container">
+            <div id="kalender-grid" class="kalender-grid"></div>
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-size: 0.8rem;
+              color: #666;
+              margin-top: 10px;
+            "
+          >
+            💡 Klik pada kotak tanggal untuk menandai sudah puasa
+          </p>
+
+          <!-- Progress Puasa -->
+          <div class="puasa-progress">
+            <p>Total Puasa: <span id="puasa-count">0</span>/30 hari</p>
+            <div class="progress-bar-container">
+              <div
+                class="progress-bar"
+                id="puasa-progress-bar"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p id="puasa-status" class="status-text">-</p>
+          </div>
+          <button id="save-puasa" class="btn-simpan">💾 Simpan Progress</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 by Ilham Cahyo Saputro | Front-End Mission</p>
+    </footer>
+
+    <script src="Misi Keempat.js"></script>
+  </body>
+</html>
